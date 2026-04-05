@@ -40,4 +40,15 @@ class CalculatorTest extends TestCase
         $this->expectException(\InvalidArgumentException::class);
         $this->calc->divide(1, 0);
     }
+
+    public function testPower(): void
+    {
+        $this->assertEquals(8, $this->calc->power(2, 3));
+        $this->assertEquals(1, $this->calc->power(5, 0));
+        $this->assertEquals(2, $this->calc->power(4, 0.5));
+        $this->assertEquals(0.25, $this->calc->power(2, -2));
+        $this->assertEquals(0, $this->calc->power(0, 5));
+        $this->assertEquals(4, $this->calc->power(-2, 2));
+        $this->assertEquals(-8, $this->calc->power(-2, 3));
+    }
 }

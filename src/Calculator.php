@@ -25,4 +25,9 @@ class Calculator
         }
         return $a / $b;
     }
+
+    public function power(float $base, float $exponent): float
+    {
+        return pow($base, $exponent);
+    }
 }
